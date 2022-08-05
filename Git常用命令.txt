@@ -1,3 +1,4 @@
+本地库
 cd "路径"                       路径跳转
 mkdir 文件夹名                  在现有目录下创建一个文件夹
 git init                        创建仓库
@@ -13,6 +14,24 @@ git reset --hard HEAD^          回退一个版本，HEAD^^则是回退两个版
 git reset --hard HEAD~100       回退一百个版本
 git reset --hard id             跳转到指定版本id
 git reset HEAD 文件名           剪切缓存区文件内容，替换工作区
-git checkout -- 文件名          工作区跳转到上一次修改
+git checkout -- 文件名          用仓库版本替换工作区版本
 git reflog                      显示曾有操作信息，可查看git log已看不到的版本id
+rm 文件名                       删除工作区文件
 cat 文件名                      查看根目录下文件内容
+
+远程库
+git remote -v                   查看远程库信息
+git remote rm 远程库名          清除远程库绑定及传输缓存
+git checkout 分支名称           切换到分支，等同于git switch 分支名称
+git checkout -b 分支名称        创建并切换到分支，等同于git switch -c 分支名称
+git branch 分支名称             创建分支，branch同上-b
+git branch                      查看当前分支
+git branch -d 分支名称          删除指定分支
+git merge 分支名称              合并指定分支到当前分支
+
+应在系统用户目录下，生成公钥/秘钥
+ssh-keygen -t rsa -C "github注册邮箱"
+与远程库窗机链接，远程库名通常默认为origin
+git remote add 远程库名 git@github.com:GitHub账户名/本地库名
+推送到远程库，-u关联本地
+git push -u 远程库名 master
