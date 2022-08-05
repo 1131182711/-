@@ -29,7 +29,7 @@ git branch                      查看当前分支
 git branch -d 分支名称          删除指定分支
 git merge 分支名称              合并指定分支到当前分支
 
-上传github
+上传GitHub
 应在系统用户目录下，生成公钥/秘钥
 ssh-keygen -t rsa -C "github注册邮箱"
 与远程库窗机链接，远程库名通常默认为origin
