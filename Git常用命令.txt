@@ -4,13 +4,15 @@ git init                        创建仓库
 git add 文件名                  添加根目录下某文件到缓存区
 git commit -m "注释"            上传缓存
 git status                      查看Git仓库状态
-git diff 文件名                 查看对该文件所做修改
-git diff HEAD -- 文件名         查看库中文件内容以及修改情况
+git ls-files                    查看仓库文件名
+git diff 文件名                 对比工作区与仓库所做修改
+git diff HEAD -- 文件名         查看当前分支仓库与工作区所做修改
 git log                         查看版本详情
 git log --pretty=oneline        查看单行版本简要
 git reset --hard HEAD^          回退一个版本，HEAD^^则是回退两个版本
 git reset --hard HEAD~100       回退一百个版本
 git reset --hard id             跳转到指定版本id
+git reset HEAD 文件名           剪切缓存区文件内容，替换工作区
+git checkout -- 文件名          工作区跳转到上一次修改
 git reflog                      显示曾有操作信息，可查看git log已看不到的版本id
 cat 文件名                      查看根目录下文件内容
-
