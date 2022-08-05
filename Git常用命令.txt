@@ -13,3 +13,4 @@ git reset --hard HEAD~100       回退一百个版本
 git reset --hard id             跳转到指定版本id
 git reflog                      显示曾有操作信息，可查看git log已看不到的版本id
 cat 文件名                      查看根目录下文件内容
+
