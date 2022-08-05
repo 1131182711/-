@@ -17,7 +17,7 @@ git reset HEAD 文件名           剪切缓存区文件内容，替换工作区
 git checkout -- 文件名          用仓库版本替换工作区版本
 git reflog                      显示曾有操作信息，可查看git log已看不到的版本id
 rm 文件名                       删除工作区文件
-cat 文件名                      查看根目录下文件内容
+cat 文件名                      查看根目录下文件内容，发送分支冲突时可显示错误
 
 远程库
 git remote -v                   查看远程库信息
@@ -36,3 +36,6 @@ ssh-keygen -t rsa -C "github注册邮箱"
 git remote add 远程库名 git@github.com:GitHub账户名/本地库名
 推送到远程库，-u关联本地
 git push -u 远程库名 master
+
+查看分支树
+git log --graph --pretty=oneline --abbrev-commit
