@@ -18,6 +18,7 @@ git checkout -- 文件名          用仓库版本替换工作区版本
 git reflog                      显示曾有操作信息，可查看git log已看不到的版本id
 rm 文件名                       删除工作区文件
 cat 文件名                      查看根目录下文件内容，发送分支冲突时可显示错误
+cat .git/config                 显示仓库的配置文件
 
 远程库
 git remote -v                   查看远程库信息
@@ -32,18 +33,33 @@ git merge 分支名称              合并指定分支到当前分支
 git stash                       存储当前工作现场，清除当前分支所有内容
 git stash list                  查看当前分支工作现场存档
 git stash pop                   恢复存储的工作现场，清除工作现场存档
-git cherry -pick id             拷贝指定提交在本分支提交
+git cherry -pick id             拷贝指定提交在本分支上提交
+git pull                        抓取远程分支合并到本地分支
+git tag 版本号                  给当前分支打一个标签，指向最新的commit
+git tag 版本号 -m "注释" id     给指定提交打一个标签，-m可加可不加
+git tag                         只要本分支有相关commit，即会显示其指定标签
+git tag -d 标签名               删除标签
 
 上传GitHub
 应在系统用户目录下，生成公钥/秘钥
 ssh-keygen -t rsa -C "github注册邮箱"
 与远程库窗机链接，远程库名通常默认为origin
 git remote add 远程库名 git@github.com:GitHub账户名/本地库名
-推送到远程库，-u关联本地
-git push -u 远程库名 master
+推送分支到远程库，-u关联本地，第二次就可以不用写-u了
+git push -u 远程库名 分支名
+推送标签到远程库，如果标签名写--tags，则推送所有标签
+git push 远程库名 标签名
+删除远程库指定标签。好习惯：删远程前先删本地
+git push 远程库名 :refs/tags/标签名
+链接指定分支与远程库远程库分支
+git branch --set-upstream-to=远程库名/远程库分支名称 分支名称
+在本地创建和远程分支对应的分支
+git checkout -b 分支名 origin/分支名
 
 查看分支树
 git log --graph --pretty=oneline --abbrev-commit
 禁用快速合并进行合并
 git merge --no-ff -m "注释" 分支名称
+命令配置别名，global代表用于该电脑用户所有Git仓库
+git config --global alias.别名 原命令
 
