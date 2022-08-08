@@ -26,8 +26,13 @@ git checkout 分支名称           切换到分支，等同于git switch 分支
 git checkout -b 分支名称        创建并切换到分支，等同于git switch -c 分支名称
 git branch 分支名称             创建分支，branch同上-b
 git branch                      查看当前分支
-git branch -d 分支名称          删除指定分支
+git branch -d 分支名称          合并后删除指定分支
+git branch -D 分支名称          未合并强制删除指定分支
 git merge 分支名称              合并指定分支到当前分支
+git stash                       存储当前工作现场，清除当前分支所有内容
+git stash list                  查看当前分支工作现场存档
+git stash pop                   恢复存储的工作现场，清除工作现场存档
+git cherry -pick id             拷贝指定提交在本分支提交
 
 上传GitHub
 应在系统用户目录下，生成公钥/秘钥
@@ -39,3 +44,6 @@ git push -u 远程库名 master
 
 查看分支树
 git log --graph --pretty=oneline --abbrev-commit
+禁用快速合并进行合并
+git merge --no-ff -m "注释" 分支名称
+
